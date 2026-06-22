@@ -30,7 +30,6 @@ const textForm = ref('➕ Nuevo entrenador')
 onMounted(async () => {
   try {
     const { randomPokemon } = functions()
-
     pokemon.value = await randomPokemon()
   } catch (error) {
     console.error(error)
@@ -42,6 +41,7 @@ onMounted(async () => {
 async function randomPokemonButton() {
   const { randomPokemon } = functions()
   loading.value = true
+  await new Promise(resolve => setTimeout(resolve, 500)) 
 
   try {
     pokemon.value = await randomPokemon()
