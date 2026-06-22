@@ -5,9 +5,11 @@
     <PokemonInfo v-if="pokemon" :pokemon="pokemon" />
     <Random @click="randomPokemonButton" />
     <form>
-      <button type="button" @click="showFormChange" class="rounded-lg bg-gradient-to-r from-red-500 to-red-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl active:translate-y-0" >{{ textForm }}</button>
+      <button type="button" @click="showFormChange"
+        class="rounded-lg bg-gradient-to-r from-red-500 to-red-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl active:translate-y-0">{{
+        textForm }}</button>
     </form>
-    
+
     <FormTrainer v-if="showForm" />
   </div>
 </template>
@@ -41,7 +43,7 @@ onMounted(async () => {
 async function randomPokemonButton() {
   const { randomPokemon } = functions()
   loading.value = true
-  await new Promise(resolve => setTimeout(resolve, 500)) 
+  await new Promise(resolve => setTimeout(resolve, 500))
 
   try {
     pokemon.value = await randomPokemon()
