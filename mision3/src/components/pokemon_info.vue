@@ -5,7 +5,7 @@
         class="h-64 w-64 rounded-xl bg-white p-4 shadow-lg transition-transform duration-300 hover:scale-105" />
     </div>
 
-    <div>
+    <div class="mt-2 p-2">
       <p><strong>Nombre:</strong> {{ pokemon.name }}</p>
       <p><strong>Tipos:</strong> {{ pokemon.types.join(', ') }}</p>
     </div>
