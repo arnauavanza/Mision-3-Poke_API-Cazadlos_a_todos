@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col gap-5 rounded-md border border-gray-300 p-5 shadow">
     <h1>PokéRandom</h1>
-    <Random @click="randomPokemonButton" />
     <Loader v-if="loading" />
     <PokemonInfo v-if="pokemon" :pokemon="pokemon" />
+    <Random @click="randomPokemonButton" />
   </div>
 </template>
 
