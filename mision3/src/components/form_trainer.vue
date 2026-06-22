@@ -45,7 +45,7 @@
                     class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200" />
             </div>
 
-            <button type="submit"
+            <button type="button"
                 class="mt-4 rounded-lg bg-red-500 px-4 py-3 font-semibold text-white transition hover:bg-red-600 active:scale-95">
                 Registrar Entrenador
             </button>
