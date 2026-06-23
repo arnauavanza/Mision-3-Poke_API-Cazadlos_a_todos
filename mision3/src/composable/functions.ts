@@ -10,7 +10,7 @@ export function functions() {
         const pokemon: Pokemon = {
             imageUrl: randomPokemon.data.sprites.front_default,
             name: randomPokemon.data.name,
-            types: randomPokemon.data.types.map((type: any) => type.type.name),
+            types: randomPokemon.data.types.map((type: { type: { name: string } }) => type.type.name),
         };
         return pokemon;
     }
