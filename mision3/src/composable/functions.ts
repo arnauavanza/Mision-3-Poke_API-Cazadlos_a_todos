@@ -5,8 +5,6 @@ const API_URL: string = import.meta.env.VITE_API_URL;
 
 export function functions() {
     async function randomPokemon(): Promise<Pokemon> {
-        console.log(import.meta.env);
-        console.log(import.meta.env.VITE_API_URL);
         const randomId = Math.floor(Math.random() * 898) + 1;
         const randomPokemon = await axios.get(`${API_URL}${randomId}`);
         const pokemon: Pokemon = {
