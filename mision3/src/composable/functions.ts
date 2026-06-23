@@ -1,12 +1,12 @@
-import type { Pokemon } from '../interfaces/types.ts';
+import type { Pokemon, PokeAPIResponse } from '../interfaces/types.ts';
 import axios from 'axios';
 
 const API_URL: string = import.meta.env.VITE_API_URL;
 
 export function functions() {
-    async function randomPokemon(): Promise<Pokemon> {
+    async function randomPokemon(): Promise<PokeAPIResponse> {
         const randomId = Math.floor(Math.random() * 898) + 1;
-        const randomPokemon = await axios.get(`${API_URL}${randomId}`);
+        const randomPokemon = await axios.get<PokeAPIResponse>(`${API_URL}${randomId}`);
         const pokemon: Pokemon = {
             imageUrl: randomPokemon.data.sprites.front_default,
             name: randomPokemon.data.name,
