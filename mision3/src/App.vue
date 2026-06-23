@@ -3,11 +3,10 @@
     <h1>PokéRandom</h1>
     <Loader v-if="loading" />
     <PokemonInfo v-if="pokemon" :pokemon="pokemon" />
-    <form class="flex-col items-center">
-      <ButtonPredefined label="Random" color="amber" type="button" @click="randomPokemonButton" /><br/>
+    <div class="flex-col items-center">
+      <ButtonPredefined label="Random" color="amber" type="button" @click="randomPokemonButton" /><br />
       <ButtonPredefined :label="textForm" type="button" @click="showFormChange" />
-    </form>
-
+    </div>
     <FormTrainer v-if="showForm" />
   </div>
 </template>

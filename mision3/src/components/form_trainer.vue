@@ -4,7 +4,7 @@
             Formulario de Registro de Entrenador Pokémon
         </h3>
 
-        <form class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4">
             <div>
                 <label for="trainer-name" class="mb-1 block text-sm font-medium text-gray-700">
                     Nombre
@@ -45,7 +45,7 @@
                     class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200" />
             </div>
             <ButtonPredefined label="Registrar Entrenador" color="yellow" type="button" />
-        </form>
+        </div>
     </div>
 </template>
 
@@ -54,9 +54,8 @@ import { defineComponent } from 'vue'
 import ButtonPredefined from './button_predefined.vue'
 
 export default defineComponent({
-  components: {
-    ButtonPredefined
-  }
+    components: {
+        ButtonPredefined
+    }
 })
 </script>
-
