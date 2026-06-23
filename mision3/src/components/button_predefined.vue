@@ -1,6 +1,5 @@
 <template>
-    <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded m-2" :type="type"
-        @click="emit('click')">
+    <button :class="[classColor, 'px-6 py-3 rounded-xl border-4 border-black font-bold text-white uppercase tracking-wider', 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]', 'transition-all duration-150','hover:scale-105 hover:-translate-y-1','active:translate-y-1 active:shadow-none']" :type="type" @click="emit('click')">
         {{ label }}
     </button>
 </template>

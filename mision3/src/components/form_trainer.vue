@@ -44,7 +44,7 @@
                 <input type="text" id="trainer-password"
                     class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200" />
             </div>
-            <ButtonPredefined label="Registrar Entrenador" color="yellow" type="button" />
+            <ButtonPredefined label="Registrar Entrenador" classColor="bg-gray-500 hover:bg-gray-600" type="button" />
         </div>
     </div>
 </template>

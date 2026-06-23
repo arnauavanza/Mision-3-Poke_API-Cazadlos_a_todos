@@ -6,6 +6,7 @@ interface Pokemon {
 
 interface ButtonProps {
   label: string;
+  classColor?: string;
   type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;
 }

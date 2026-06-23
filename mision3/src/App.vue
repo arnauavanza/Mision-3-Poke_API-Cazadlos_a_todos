@@ -4,12 +4,12 @@
     <Loader v-if="loading" />
     <PokemonInfo v-if="pokemon" :pokemon="pokemon" />
     <div class="flex-col items-center">
-      <ButtonPredefined label="Random" color="amber" type="button" @click="randomPokemonButton" /><br />
-      <ButtonPredefined :label="textForm" type="button" @click="showFormChange" />
+      <ButtonPredefined label="Random" classColor="bg-amber-500 hover:bg-amber-600" type="button" @click="randomPokemonButton" /><br />
+      <ButtonPredefined :label="textForm" classColor="bg-red-500 hover:bg-red-600" type="button" @click="showFormChange" />
     </div>
     <FormTrainer v-if="showForm" />
   </div>
-</template>
+</template>   
 
 <script setup lang="ts">
 import PokemonInfo from './components/pokemon_info.vue'
