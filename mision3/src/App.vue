@@ -3,11 +3,9 @@
     <h1>PokéRandom</h1>
     <Loader v-if="loading" />
     <PokemonInfo v-if="pokemon" :pokemon="pokemon" />
-    <Random @click="randomPokemonButton" />
-    <form>
-      <button type="button" @click="showFormChange"
-        class="rounded-lg bg-gradient-to-r from-red-500 to-red-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl active:translate-y-0">{{
-        textForm }}</button>
+    <form class="flex-col items-center">
+      <ButtonPredefined label="Random" color="amber" type="button" @click="randomPokemonButton" /><br/>
+      <ButtonPredefined :label="textForm" type="button" @click="showFormChange" />
     </form>
 
     <FormTrainer v-if="showForm" />
@@ -16,13 +14,12 @@
 
 <script setup lang="ts">
 import PokemonInfo from './components/pokemon_info.vue'
-import Random from './components/random.vue'
 import Loader from './components/loader.vue'
 import FormTrainer from './components/form_trainer.vue'
 import { functions } from './composable/functions';
 import { ref, onMounted } from 'vue';
 import type { Pokemon } from './interfaces/types';
-
+import ButtonPredefined from './components/button_predefined.vue'
 
 const pokemon = ref<Pokemon | null>(null)
 const loading = ref(true)

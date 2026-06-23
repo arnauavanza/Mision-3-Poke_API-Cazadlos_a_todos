@@ -4,4 +4,9 @@ interface Pokemon {
   types: string[];
 }
 
-export type { Pokemon };
+interface ButtonProps {
+  label: string;
+  type?: 'button' | 'submit' | 'reset';
+  onClick?: () => void;
+}
+export type { Pokemon, ButtonProps };

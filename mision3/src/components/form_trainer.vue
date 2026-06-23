@@ -44,13 +44,19 @@
                 <input type="text" id="trainer-password"
                     class="w-full rounded-lg border border-gray-300 px-4 py-2 outline-none transition focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200" />
             </div>
-
-            <button type="button"
-                class="mt-4 rounded-lg bg-red-500 px-4 py-3 font-semibold text-white transition hover:bg-red-600 active:scale-95">
-                Registrar Entrenador
-            </button>
+            <ButtonPredefined label="Registrar Entrenador" color="yellow" type="button" />
         </form>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts">
+import { defineComponent } from 'vue'
+import ButtonPredefined from './button_predefined.vue'
+
+export default defineComponent({
+  components: {
+    ButtonPredefined
+  }
+})
+</script>
+
