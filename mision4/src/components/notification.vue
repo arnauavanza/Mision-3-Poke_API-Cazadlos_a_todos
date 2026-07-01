@@ -7,13 +7,13 @@
             </div>
             <ButtonPred class-color="bg-red-500" class="align-center" v-if="button_del" label="Eliminar"
                 @click="emit('confirm')"></ButtonPred>
-            <button v-else @click="emit('close')"
-                class="flex items-center justify-center w-10 h-10 rounded-full bg-red-500 text-white text-2xl font-bold border-2 border-black hover:bg-red-600 transition">✕</button>
+            <XButton @close="emit('close')" v-else></XButton>
         </div>
     </Teleport>
 </template>
 
 <script setup lang="ts">
+import  XButton  from './x_button.vue';
 import ButtonPred from './button_predefined.vue';
 defineProps<{
     label: string
