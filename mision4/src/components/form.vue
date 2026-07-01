@@ -5,11 +5,7 @@
         <Input :value="inputEmail" placeholder="trainer@example.com" @update="inputEmail = $event" />
         <ButtonPred label="Asignar Pokémon" type="button" classColor="bg-yellow-400" @click="assignPokemon" />
       </form>
-      <div v-if="trainer && trainer.pokemon"
-        class="relative flex items-center justify-center h-64 w-64 rounded-full border-8 border-black bg-[linear-gradient(to_bottom,#ef4444_0%,#ef4444_50%,#ffffff_50%,#ffffff_100%)] before:absolute before:left-0 before:top-1/2 before:h-4 before:w-full before:-translate-y-1/2 before:bg-black">
-        <img :src="trainer.pokemon.imageUrl" class="h-full w-full object-contain brightness-0 select-none"
-          draggable="false" />
-      </div>
+      <PokeImg v-if="trainer && trainer.pokemon" :img="trainer.pokemon.imageUrl"></PokeImg>
       <div class="w-80">
         <ButtonPred label="Guardar Entrenador" type="submit" classColor="bg-orange-400" @click="saveTrainer" />
       </div>
@@ -26,6 +22,7 @@ import { useRandomPokemon } from '../composable/functions.ts'
 import { useTrainerStore } from '../stores/trainer.ts'
 import Notification from './notification.vue';
 import Input from './input.vue'
+import PokeImg from './pokemon_img.vue'
 
 const { randomPokemon } = useRandomPokemon()
 const trainerStore = useTrainerStore()
