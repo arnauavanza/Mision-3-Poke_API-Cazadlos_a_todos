@@ -50,13 +50,12 @@ function saveTrainer() {
   if (!createObject()) {
     showNotification()
     return
-  } else {
-    trainerStore.addTrainer(trainer.value!)
-    console.log(trainer.value!)
-    inputEmail.value = ""
-    inputName.value = ""
-    trainer.value = null
   }
+  trainerStore.addTrainer(trainer.value!)
+  inputEmail.value = ""
+  inputName.value = ""
+  trainer.value = null
+
 }
 
 
