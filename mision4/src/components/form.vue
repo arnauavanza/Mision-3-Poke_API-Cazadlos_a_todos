@@ -37,13 +37,9 @@ async function assignPokemon() {
     showNotification()
     return
   }
-
-  try {
     trainer.value!.pokemon = await randomPokemon()
     trainer.value!.pokemon_assigned = true
-  } catch (error) {
-    console.error(error)
-  }
+  
 }
 
 function saveTrainer() {
