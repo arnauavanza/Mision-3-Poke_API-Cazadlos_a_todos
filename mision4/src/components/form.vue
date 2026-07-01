@@ -1,10 +1,8 @@
   <template>
     <div class="p-4 rounded-xl flex flex-col items-center gap-6">
       <form class="w-80 p-4 flex flex-col gap-3 bg-red-500 border-2 border-black rounded-xl">
-        <input v-model="inputName" type="text" name="name" @change="createObject" placeholder="Trainer name"
-          class="p-2 rounded border text-white border-black" />
-        <input v-model="inputEmail" type="email" name="email" @change="createObject" placeholder="trainer@example.com"
-          class="p-2 rounded border text-white border-black" />
+        <Input :value="inputName" placeholder="Trainer name" @update="inputName = $event" />
+        <Input :value="inputEmail" placeholder="trainer@example.com" @update="inputEmail = $event" />
         <ButtonPred label="Asignar Pokémon" type="button" classColor="bg-yellow-400" @click="assignPokemon" />
       </form>
       <div v-if="trainer && trainer.pokemon"
@@ -27,6 +25,7 @@ import type { Trainer } from '../interfaces/types.ts'
 import { useRandomPokemon } from '../composable/functions.ts'
 import { useTrainerStore } from '../stores/trainer.ts'
 import Notification from './notification.vue';
+import Input from './input.vue'
 
 const { randomPokemon } = useRandomPokemon()
 const trainerStore = useTrainerStore()
