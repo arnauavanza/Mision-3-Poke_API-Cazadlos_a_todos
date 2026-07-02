@@ -13,7 +13,7 @@ export function useRandomPokemon() {
             };
             return pokemon;
         } catch (error) {
-            console.error('Error al obtener el Pokémon:', error);
+            console.error('Error al obtener el Pokémon');
             throw error;
         }
     }
