@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import type { Trainer } from '../interfaces/types.ts'
-import { useRandomPokemon } from '../composable/functions.ts'
+import { useRandomPokemon } from '../composable/usePokeRandom.ts'
 
 const { randomPokemon } = useRandomPokemon()
 

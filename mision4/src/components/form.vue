@@ -18,7 +18,7 @@
 import ButtonPred from './button_predefined.vue'
 import { ref } from 'vue';
 import type { Trainer } from '../interfaces/types.ts'
-import { useRandomPokemon } from '../composable/functions.ts'
+import { useRandomPokemon } from '../composable/usePokeRandom.ts'
 import { useTrainerStore } from '../stores/trainer.ts'
 import Notification from './notification.vue';
 import Input from './input.vue'
