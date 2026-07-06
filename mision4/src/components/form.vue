@@ -99,6 +99,13 @@ function handleClickButton() {
   enviarFormulario()
 }
 
+function resetForm() {
+  inputName.value = ""
+  inputSurname.value = ""
+  inputEmail.value = ""
+  inputDNI.value = ""
+  trainer.value = null
+}
 
 async function assignPokemon() {
   if (!createObject()) {
@@ -116,16 +123,11 @@ function saveTrainer() {
     return
   }
   trainerStore.addTrainer(trainer.value!)
-  inputEmail.value = ""
-  inputName.value = ""
-  inputSurname.value = ""
-  inputDNI.value = ""
-  trainer.value = null
-
+  resetForm()
 }
 
 function createObject() {
-  if (no_errors.value === false) {
+  if (!no_errors.value) {
     return false
   }
 
