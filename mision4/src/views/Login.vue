@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, computed } from 'vue';
+import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../stores/auth';
 import Toast from '../components/Toast.vue'
@@ -43,10 +43,6 @@ const password = ref('');
 
 let email_okformat = ref(false);
 let password_okformat = ref(false);
-
-const no_errors = computed(() => {
-    return email_okformat.value && password_okformat.value
-})
 
 const email_real = ref('example@example.com');
 const password_real = ref('password');
