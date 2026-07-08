@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import TrainerComp from './trainer.vue'
-import { useTrainerStore } from '../stores/trainer'
+import { useTrainerStore } from '../stores/useTrainersStore.ts'
 import { computed } from 'vue'
 
 const trainerStore = useTrainerStore()
