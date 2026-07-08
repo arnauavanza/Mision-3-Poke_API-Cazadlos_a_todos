@@ -22,7 +22,7 @@ import ButtonPred from './button_predefined.vue'
 import { ref, computed, watch } from 'vue';
 import type { Trainer } from '../interfaces/types.ts'
 import { useRandomPokemon } from '../composable/usePokeRandom.ts'
-import { useTrainerStore } from '../stores/trainer.ts'
+import { useTrainerStore } from '../stores/useTrainersStore.ts'
 import Notification from './notification.vue';
 import Input from './input.vue'
 import PokeImg from './pokemon_img.vue'

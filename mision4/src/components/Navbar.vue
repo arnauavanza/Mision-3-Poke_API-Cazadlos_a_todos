@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { useAuthStore } from '../stores/auth';
+import { useAuthStore } from '../stores/useAuthStore.ts';
 import { useRouter } from 'vue-router';
 import ButtonPredefined from './button_predefined.vue'
 
@@ -15,7 +15,7 @@ const authStore = useAuthStore();
 const router = useRouter();
 
 function logout() {
-    authStore.isAuthenticated = false;
-    router.push('/');
+    authStore.logout();
+    router.push({ name: 'Login' });
 }
 </script>

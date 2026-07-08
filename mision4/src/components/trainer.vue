@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import ButtonPred from './button_predefined.vue'
-import { useTrainerStore } from '../stores/trainer.ts'
+import { useTrainerStore } from '../stores/useTrainersStore.ts'
 import type { Trainer } from '../interfaces/types.ts';
 import Notification from './notification.vue';
 import { ref } from 'vue';

@@ -6,16 +6,12 @@
                 <div>
                     <label for="email" class="mb-2 block text-sm font-medium text-gray-200">Email:</label>
                     <Input :value="email" placeholder="example@example.com" @update="email = $event" />
-                    <p v-if="email && !email_okformat" class="text-sm text-red-500">
-                        El correo no tiene un formato válido.
-                    </p>
+                    <Paragrapyh v-if="email && !email_okformat" label="El correo no tiene un formato válido."/>
                 </div>
                 <div>
                     <label for="password" class="mb-2 block text-sm font-medium text-gray-200">Password:</label>
                     <Input :value="password" placeholder="Password" @update="password = $event" />
-                    <p v-if="password && !password_okformat" class="text-sm text-red-500">
-                        La contraseña debe tener al menos 8 caracteres, incluyendo una letra y un número.
-                    </p>
+                    <Paragrapyh v-if="password && !password_okformat" label="La contraseña debe tener al menos 7 caracteres."/>
                 </div>
                 <ButtonPredefined label="Login" type="button" classColor="bg-blue-500" @click="login" />
             </form>
@@ -29,10 +25,11 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router'
-import { useAuthStore } from '../stores/auth';
+import { useAuthStore } from '../stores/useAuthStore.ts';
 import Toast from '../components/Toast.vue'
 import ButtonPredefined from '../components/button_predefined.vue'
 import Input from '../components/input.vue';
+import Paragrapyh from '../components/Paragrapyh.vue';
 
 const authStore = useAuthStore();
 
@@ -51,9 +48,8 @@ let showToast = ref(false);
 
 function login() {
     if (email.value === email_real.value && password.value === password_real.value) {
-        authStore.isAuthenticated = true;
-        console.log(authStore.isAuthenticated);
-        router.push('/Home');
+        authStore.login();
+        router.push({ name: 'Home' });
     } else {
         showToast.value = true;
 
